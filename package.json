@@ -1,0 +1,16 @@
+{
+  "name": "v-el-table-doc",
+  "version": "0.1.0-alpha.1",
+  "description": "site for v-el-table document",
+  "main": "index.js",
+  "repository": "git@github.com:weiquanju/v-el-table-doc.git",
+  "author": "weiquanju <anbine@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.35"
+  }
+}
