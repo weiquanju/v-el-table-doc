@@ -1,7 +1,7 @@
 import { defineUserConfig, defaultTheme } from 'vuepress'
-import type { DefaultThemeOptions } from 'vuepress'
-import { viteBundler, ViteBundlerOptions } from '@vuepress/bundler-vite'
+import { viteBundler } from '@vuepress/bundler-vite'
 import path from 'path'
+import demoBlock from './plugin/vuepress-plugin-demo-block/src'
 
 export default defineUserConfig({
   bundler: viteBundler({
@@ -93,11 +93,10 @@ export default defineUserConfig({
     ['link', { rel: "apple-touch-icon", href: "/assets/images/icons/apple-app.png" }],
   ],
   plugins: [
-    // [
-    //   demoBlock,
-    //   {
-    //     componentsDir: path.resolve(__dirname, './../examples')
-    //   }
-    // ]
+    [
+      demoBlock({
+        componentsDir: path.resolve(__dirname, './../examples')
+      })
+    ]
   ],
 })
