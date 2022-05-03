@@ -95,7 +95,8 @@ export default defineUserConfig({
   plugins: [
     [
       demoBlock({
-        componentsDir: path.resolve(__dirname, './../examples')
+        componentsDir: path.resolve(__dirname, './../examples'),
+        githubEditLinkPath: 'https://github.com/weiquanju/v-el-table-doc/edit/main/docs/examples/',
       })
     ]
   ],

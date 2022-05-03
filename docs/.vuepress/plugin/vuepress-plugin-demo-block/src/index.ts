@@ -5,6 +5,7 @@ const chokidar = require("chokidar");
 
 interface OptionsInterface {
   components?: any;
+  githubEditLinkPath?: string;
   componentsDir: string;
   componentsPatterns?: string[];
   getComponentName?: (filename: string) => string;
@@ -16,6 +17,7 @@ export default (option: OptionsInterface) => {
       components: {},
       componentsDir: null,
       componentsPatterns: ["**/*.vue"],
+      githubEditLinkPath: '',
       getComponentName: (filename) =>
         path.trimExt(filename.replace(/\/|\\/g, "-")),
     },
@@ -28,7 +30,7 @@ export default (option: OptionsInterface) => {
     multiple: true,
     clientAppEnhanceFiles: () =>
       prepareClientAppEnhanceFile(app, options, optionsHash),
-    extendsMarkdown: (md) => {
+    extendsMarkdown: (md, app) => {
       md.use(demoBlockContainers(options));
     },
     onWatched: (app, watchers) => {

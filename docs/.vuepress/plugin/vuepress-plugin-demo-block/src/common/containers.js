@@ -39,6 +39,7 @@ module.exports = (options) => {
           const cptName = getComponentName(sourceFile);
 
           const { code, lang } = highlight(source, "vue")
+          const githubLink = `${options.githubEditLinkPath}${sourceFile}.vue`
 
           const encodeOptionsStr = encodeURI(JSON.stringify(options));
           let result = `<${componentName} componentName="${cptName}" :options="JSON.parse(decodeURI('${encodeOptionsStr}'))"
@@ -46,6 +47,7 @@ module.exports = (options) => {
           code="${encodeURIComponent(code)}"
           source="${encodeURIComponent(source)}"
           lang="${lang}"
+          github-link="${encodeURIComponent(githubLink)}"
           >
         `;
           return result;

@@ -6,7 +6,9 @@
 
     <!-- <div class="description" v-html="decode(description)" v-if="description"></div> -->
     <div :class="['tool', state.showCode ? 'showCode' : '']">
-      <Github />
+      <a :href="link" target="_blank" rel="noopener noreferrer" class="github-link">
+        <Github />
+      </a>
       <Copy @click="copyHandler" />
       <Code @click="state.showCode = !state.showCode" />
     </div>
@@ -40,6 +42,7 @@ const props = defineProps<{
   lang: string;
   componentName: string;
   options: any;
+  githubLink: string;
 }>();
 
 const decode = (str: string) => decodeURIComponent(str);
@@ -47,10 +50,12 @@ const state = reactive({
   showCode: false,
 });
 
+const link = decode(props.githubLink)
+
 const refCode = ref<HTMLDivElement>(null)
 
 const copyHandler = async () => {
-  const msg:string|undefined = await writeToClipboard(decode(props.source))
+  const msg: string | undefined = await writeToClipboard(decode(props.source))
   if (typeof msg !== 'undefined') {
     ElMessage.error('复制失败:' + msg)
   } else {
