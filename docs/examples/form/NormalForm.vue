@@ -14,10 +14,10 @@ const config = reactive({
     fields: [
         {
             itemProps: { prop: 'name', label: '姓名' },
-            inputComponent: 'el-input',
+            // inputComponent: 'el-input',
             // inputComponent: 'ElInput',
             /**支持jsx 语法 */
-            // inputComponent: () => <ElInput type="input" modelValue={model.value.name}></ElInput>,
+            inputComponent: () => <ElInput type="input" modelValue={model.value.name}></ElInput>,
             inputProps: { type: 'text', placeholder: 'Please input' },
             inputEvents: {
                 change: (...args: any) => console.log(...args)
