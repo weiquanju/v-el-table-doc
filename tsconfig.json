@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "useDefineForClassFields": true,
+    "strict": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "types": [
+      "vite/client",
+      "element-plus/global",
+      "@vuepress/client/types"
+    ],
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ],
+    "skipLibCheck": true,
+    "suppressImplicitAnyIndexErrors": true //允许这样访问对象：obj["foo"]
+  },
+  "include": [
+    "docs/examples/**/*",
+    "docs/.vuepress/vite.config.ts"
+  ]
+}

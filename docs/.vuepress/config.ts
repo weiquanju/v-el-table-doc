@@ -1,12 +1,19 @@
-import { defineUserConfig } from 'vuepress'
+import { defineUserConfig, defaultTheme } from 'vuepress'
 import type { DefaultThemeOptions } from 'vuepress'
+import { viteBundler, ViteBundlerOptions } from '@vuepress/bundler-vite'
 import path from 'path'
-import demoBlock from 'vuepress2-plugin-demo-block'
-export default defineUserConfig<DefaultThemeOptions>({
 
+export default defineUserConfig({
+  bundler: viteBundler({
+    viteOptions: {
+      configFile: path.resolve(__dirname, './vite.config.ts'),
+      // envFile?: false;F
+    },
+    vuePluginOptions: {},
+  }),
   // 主题和它的配置
-  theme: '@vuepress/theme-default',
-  themeConfig: {
+  theme: defaultTheme({
+
     logo: '/assets/images/logo.png',
     repo: 'weiquanju/v-el-table',
     navbar: [
@@ -46,7 +53,7 @@ export default defineUserConfig<DefaultThemeOptions>({
         selectLanguageName: 'English',
       },
     },
-  },
+  }) ,
 
   locales: {
     // 键名是该语言所属的子路径
@@ -85,10 +92,12 @@ export default defineUserConfig<DefaultThemeOptions>({
     ['meta', { name: "apple-mobile-web-app-status-bar-style", content: "black" }],
     ['link', { rel: "apple-touch-icon", href: "/assets/images/icons/apple-app.png" }],
   ],
-  plugins: [[
-    demoBlock,
-    {
-      componentsDir: path.resolve(__dirname, './../examples')
-    }
-  ]],
+  plugins: [
+    // [
+    //   demoBlock,
+    //   {
+    //     componentsDir: path.resolve(__dirname, './../examples')
+    //   }
+    // ]
+  ],
 })
