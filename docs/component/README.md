@@ -14,6 +14,17 @@ prev:
 :::demo
 form/NormalForm
 :::
+### 使用Form组件
+
+- 支持表单验证
+
+- 支持自定义组件
+
+- 支持表单所有子组件
+
+:::demo
+form/Login
+:::
 
 ## VElTable
 
