@@ -1,7 +1,7 @@
 import { defineUserConfig, defaultTheme } from 'vuepress'
 import { viteBundler } from '@vuepress/bundler-vite'
 import path from 'path'
-import demoBlock from './plugin/vuepress-plugin-demo-block/src'
+import demoBlock from 'vuepress-plugin-demo-code-block'
 
 export default defineUserConfig({
   bundler: viteBundler({

@@ -1966,6 +1966,11 @@ vue@^3.2.33:
     "@vue/server-renderer" "3.2.33"
     "@vue/shared" "3.2.33"
 
+vuepress-plugin-demo-code-block@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-demo-code-block/-/vuepress-plugin-demo-code-block-1.0.5.tgz#b5b1305b469f2dadba4b701c118d03eff94853a3"
+  integrity sha512-A5MeESd9KjYOBupHIP8N85lEZQj9XudgpZArZc89Wphsq2uDVc0NHsmHWqFSKYU3QFK7lBkKeaKpqHa7SgeLkA==
+
 vuepress-vite@2.0.0-beta.41:
   version "2.0.0-beta.41"
   resolved "https://registry.npmmirror.com/vuepress-vite/-/vuepress-vite-2.0.0-beta.41.tgz#217e030f4028fea2cf4b0e35197474d7258dcde9"
