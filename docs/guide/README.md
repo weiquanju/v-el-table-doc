@@ -32,7 +32,7 @@ VELForm，VELTable，VElTablePlus
 
 - 组件可配置
 
-项目组件均写对应配置，即可快速实现需求。
+组件对应配置，更聚焦业务，快速实现需求，完成交付。
 
 
 
@@ -176,3 +176,48 @@ const config = reactive({
 } as unknown as FormProps)
 </script>
 ```
+
+## 使用TSX/JSX
+
+推荐使用TSX/JSX，项目工程配置可参考如下配置，启用TSX
+
+### 安装jsx插件
+
+```shell
+npm install @vue/babel-plugin-jsx -D
+```
+### tsconfig.json
+
+关键配置
+
+```json
+{
+  "jsx": "preserve"
+}
+```
+
+### vite.config.ts
+
+参考配置
+
+```ts
+import { defineConfig } from 'vite'
+import vueJsx from '@vitejs/plugin-vue-jsx'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    vueJsx({
+      transformOn: true,
+    }),
+  ],
+  esbuild: {
+    jsxFactory: 'h',
+    jsxFragment: 'Fragment',
+  },
+})
+```
+
+### JSX语法上手
+
+JSX语法介绍请移步, [官方JSX介绍](https://github.com/vuejs/babel-plugin-jsx#installation)
