@@ -16,6 +16,6 @@
     "element-plus": "^2.1.11",
     "v-el-table": "0.1.0-alpha.18",
     "vuepress": "^2.0.0-beta.41",
-    "vuepress-plugin-demo-code-block": "^1.0.6"
+    "vuepress-plugin-demo-code-block": "1.0.7"
   }
 }
