@@ -1,5 +1,6 @@
 <template>
   <div class="demo-block">
+    <Message v-bind="message" v-model:visible="message.visible"/>
     <div class="demo-content">
       <component :is="componentName" v-if="componentName" v-bind="$attrs" />
     </div>
@@ -33,7 +34,7 @@ import {
   Github,
   CaretTop,
 } from './icon';
-import { ElMessage } from 'element-plus'
+import Message from './components/Message/index.vue'
 
 const props = defineProps<{
   description: string;
@@ -54,12 +55,23 @@ const link = decode(props.githubLink)
 
 const refCode = ref<HTMLDivElement>(null)
 
+const message = reactive({
+  msg: '复制成功',
+  type: 'success',
+  visible: false,
+})
+
+
 const copyHandler = async () => {
   const msg: string | undefined = await writeToClipboard(decode(props.source))
   if (typeof msg !== 'undefined') {
-    ElMessage.error('复制失败:' + msg)
+    message.msg = '复制失败:' + msg
+    message.type =  'error'
+    message.visible = true
   } else {
-    ElMessage.success('复制成功')
+    message.msg = '复制成功'
+    message.type =  'success'
+    message.visible = true
   }
 }
 
@@ -101,7 +113,10 @@ onMounted(() => {
     :deep(svg) {
       padding: 1em 0.618em;
       cursor: pointer;
-      color: var(--c-text-lightest)
+      color: var(--c-text-lightest);
+      &:hover,&:active {
+        color: var(--c-text-accent);
+      }
     }
 
     &.showCode {
