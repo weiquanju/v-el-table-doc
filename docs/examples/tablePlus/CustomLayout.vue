@@ -6,18 +6,6 @@ import { reactive, SetupContext } from 'vue';
 import { VElTablePlus } from 'v-el-table'
 
 type DataType = { id: number; value: string }
-const tableProps = reactive({
-    table: { data: [{ id: 1, value: 'Hello table!' } as DataType], tableLayout: 'fixed' as 'fixed' | 'auto' },
-    columns: [
-        { prop: 'id', label: 'id' },
-        { prop: 'value', label: '值' },
-    ] as TableColumn<DataType>[],
-    events: {
-        cellClick(...args: any[]) {
-            console.log('cellClick', ...args)
-        }
-    }
-})
 
 // 函数式组件
 const Layout = (props: never, { slots }: SetupContext) => (
@@ -41,14 +29,16 @@ const tablePlusConfig = reactive<TablePlusProps<DataType>>({
             page: data.currentPage,
         })
     },
-    responsePath: 'data',
-    tableProps,
+    tableProps: {
+    table: { data: [{ id: 1, value: 'Hello table!' } as DataType] },
+    columns: [
+        { prop: 'id', label: 'id' },
+        { prop: 'value', label: '值' },
+    ] as TableColumn<DataType>[],
+},
     formProps: {
         form: {
-            model: {
-                id: '1',
-                value: ''
-            }
+            model: {}
         },
         fields: [
             {
@@ -56,14 +46,9 @@ const tablePlusConfig = reactive<TablePlusProps<DataType>>({
                 inputComponent: 'el-input',
                 inputProps: { type: 'text', placeholder: 'Please input ID' },
                 inputEvents: {}
-            },
-            {
-                itemProps: { prop: 'value', label: '值' },
-                inputComponent: 'el-input',
-                inputEvents: {}
-            },
+            }
         ]
-    } as FormProps
+    } as unknown as FormProps
 })
 </script>
 <template>
