@@ -1931,10 +1931,10 @@ util-deprecate@^1.0.1:
   resolved "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
 
-v-el-table@0.1.0-alpha.18:
-  version "0.1.0-alpha.18"
-  resolved "https://registry.yarnpkg.com/v-el-table/-/v-el-table-0.1.0-alpha.18.tgz#57eea6ce47e5249c0c7029d3e3afc698dc06655d"
-  integrity sha512-2KDLASFQC0lsQkWPqc/xlLyE8aaKwH0/MPo9d5GPNCXoOHRDF7n0Gz5bgG1+F2u+5+lK9vYV3CyXuboNfG7w7w==
+v-el-table@0.1.0-alpha.20:
+  version "0.1.0-alpha.20"
+  resolved "https://registry.yarnpkg.com/v-el-table/-/v-el-table-0.1.0-alpha.20.tgz#83e2d0cec4da4517125c14c76e4f821884a9c4b5"
+  integrity sha512-8o4bo++JFOg2Es0e1ThtPSb2rstxN2w0eBWQhuya8m53u7npdebpSmIe4LRQrgjRkj0jgM+/jCzMrsiigYgRAw==
 
 vite@~2.9.5:
   version "2.9.6"
