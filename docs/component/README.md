@@ -14,13 +14,15 @@ prev:
 :::demo
 form/NormalForm
 :::
-### 使用Form组件
+### 引入自定义组件
 
-- 支持表单验证
+支持element-plus表单组件外，也支持自定义表单组件。下面例子将自定义input组件`MyInputString`引入表单。
 
-- 支持自定义组件
+:::demo
+form/CustomComponent
+:::
 
-- 支持表单所有子组件
+### 表单验证
 
 :::demo
 form/Login
