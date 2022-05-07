@@ -61,7 +61,7 @@ export default defineUserConfig({
     '/': {
       lang: 'zh-CN',
       title: 'V-El-Table',
-      description: '一个基于Element-Plus，富有表现力的表格组件。打造你的的生产力！',
+      description: '一个基于Vue 3、Element-Plus，富有表现力的表格组件。打造你的的生产力！',
     },
     '/en/': {
       lang: 'en-US',
