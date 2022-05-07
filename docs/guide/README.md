@@ -111,71 +111,11 @@ const app = createApp(App)
 app.mount('#app')
 ```
 
-### 使用Table
+### 开始使用
 
 
-```vue
-<template>
-    <VElTable :table="tableProps.table" :columns="tableProps.columns" :events="tableProps.events"></VElTable>
-</template>
-<script lang="tsx" setup>
-import {reactive} from 'vue'
-import { VElTable } from 'v-el-table'
-type DataType = { id: number; value: string }
-const tableProps = reactive({
-  table: { data: [{ id: 1, value: 'Hello table!' } as DataType], tableLayout: 'fixed' as 'fixed' | 'auto' },
-  columns: [
-    { prop: 'id', label: 'id' },
-    { prop: 'value', label: '值' },
-    {
-      prop: 'end', label: '操作', default: (scope: { row: DataType, column: any, $index: number }) => {
-        return `delete id ${scope.row.id} `
-      }, header() {
-        return 'hello'
-      }
-    }
-  ],
-  events: {
-    cellClick(...args: any[]) {
-      console.log('cellClick', ...args)
-    }
-  }
-})
-</script>
-```
+使用请参考 [组件页面](/component)
 
-### 使用Form
-
-```vue
-<template>
-    <VElForm v-bind="config" />
-</template>
-<script lang="tsx" setup>
-import { ElInput, FormProps } from 'element-plus'
-import { VElForm } from 'v-el-table'
-import { reactive, ref } from 'vue';
-
-const model = ref({ name: 'User Name', num: 1 })
-const config = reactive({
-    form: {
-        model: model
-    },
-    fields: [
-        {
-            itemProps: { prop: 'name', label: '姓名' },
-            inputComponent: 'el-input',
-            // inputComponent: 'ElInput',
-            /**支持jsx 语法 */
-            // inputComponent: () => <ElInput type="input" modelValue={model.value.name}></ElInput>,
-            inputProps: { type: 'text', placeholder: 'Please input' },
-            inputEvents: {
-                change: (...args: any) => console.log(...args)
-            }
-        }
-    ]
-} as unknown as FormProps)
-</script>
-```
 
 ## 使用TSX/JSX
 
