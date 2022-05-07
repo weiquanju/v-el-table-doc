@@ -60,9 +60,14 @@ table/NormalTable
 
 ## VElTablePlus
 
-### 基础用法
+### Query
 :::demo
-tablePlus/NormalTablePlus
+tablePlus/Query
+:::
+
+### Filter
+:::demo
+tablePlus/TableFilter
 :::
 
 ### Button
