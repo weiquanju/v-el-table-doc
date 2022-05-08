@@ -7,7 +7,6 @@ import { VElForm } from 'v-el-table'
 import { reactive, ref } from 'vue';
 
 const model = ref({ name: 'User Name', num: 1 })
-
 const config = reactive({
     form: {
         model: model
@@ -15,7 +14,7 @@ const config = reactive({
     fields: [
         {
             itemProps: { prop: 'name', label: '姓名' },
-            inputComponent: 'ElInput',
+            inputComponent: () => <ElInput type="input" modelValue={model.value.name}></ElInput>,
             inputProps: { type: 'text', placeholder: 'Please input' },
             inputEvents: {
                 change: (...args: any) => console.log(...args)

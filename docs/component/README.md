@@ -11,9 +11,71 @@ prev:
 ## VElForm
 
 ### 基础用法
+
 :::demo
 form/NormalForm
 :::
+
+- form
+
+  - 类型`ElFormProps`
+
+  - 对应[ElementPlus Form参数](https://element-plus.org/zh-CN/component/form.html#form-%E5%B1%9E%E6%80%A7)
+
+- events
+
+  - 类型`EventsHandlers`
+
+  - 支持监听[ElementPlus Form事件](https://element-plus.org/zh-CN/component/form.html#form-%E4%BA%8B%E4%BB%B6)
+
+  - 支持HtmlElement事件监听
+
+  例如click事件
+
+- fields
+
+  - 类型`FormItemProps[]`
+
+  ```ts
+  type FormItemProps = {
+    itemProps?: ElFormItemProps & ElFormItemSlots
+    inputProps?: Record<string, any>
+    inputComponent: ComponentType
+    inputEvents?: EventsHandlers
+    children?: string | VNode[]
+    visible?: boolean
+    remoteHandler?: <Return = Promise<any>>(itemContext: FormItemProps) => Return
+    remoteParams?: object
+  } & Record<string, any>
+  ```
+
+  - `FormItemProps.itemProps` 
+  
+  此处特别说明，它对应 [ElFormItem 参数](https://element-plus.org/zh-CN/component/form.html#form-item-%E5%B1%9E%E6%80%A7)
+,同时合并了ElFormItem 插槽
+
+  - `FormItemProps.remoteHandler`
+
+  此参数方便异步远程数据后初始化。`FormItemProps.remoteParams` 为此函数参数，类型`object`.
+  
+  - `FormItemProps.inputComponent`
+
+  类型`ComponentType`
+
+  `type ComponentType = string | Component | DefineComponent | JSX.Element | ConcreteComponent | FunctionalComponent`
+
+  为ElFormItem下的数据输入组件，字段因此命名。
+
+    - `FormItemProps.inputProps`为组件对应参数，类型`Record<string, any>`
+    - `FormItemProps.inputEvents`为组件对应事件参数，类型`EventsHandlers`
+    - `FormItemProps.inputChildren`为组件的子节点，类型为`string | VNode[]`.
+
+### TSX
+
+:::demo
+form/TsxForm
+:::
+
 ### 引入自定义组件
 
 支持element-plus表单组件外，也支持自定义表单组件。下面例子将自定义input组件`MyInputString`引入表单。
@@ -27,29 +89,6 @@ form/CustomComponent
 :::demo
 form/Login
 :::
-
-### 参数
-
-| 属性   | 说明                                             | 类型            | 可选值 | 默认值 |
-| :----- | :----------------------------------------------- | :-------------- | :----- | :----- |
-| class  | 样式类名称                                       | string/object   | —      | ""     |
-| style  | 样式                                             | string/object   | —      | ""     |
-| form   | ElForm组件参数                                   | ElFormProps     | —      |        |
-| events | 表单事件，key为事件名称，value为事件对应处理方法 | object          | —      | {}     |
-| fields | 表单字段                                         | FormItemProps[] | —      |        |
-
-#### FormItemProps 参数
-
-| 属性   | 说明   | 类型            | 可选值 | 默认值 |
-| :----- | :---- | :-------------- | :----- | :----- |
-| itemProps | ElFormItem组件参数及FormItem插槽 | ElFormItemProps & ElFormItemSlots | — | {} |
-| inputComponent | 输入组件，可以是字符串或具体组件 | string \| Element\| Component\| FunctionalComponent | — |        |
-| inputProps | 输入组件参数 | object | — | {} |
-| inputEvents | 输入组件事件，key为事件名称，value为事件对应处理方法 | object | — | {} |
-| children | 输入组件潜入的子节点，子组件 | string \| any[] |        | undefined |
-| visible | 是否可见 | boolean |        | true |
-| remoteHandler | 初始化时，远程请求方法 | PromiseFunction |        | undefined |
-| remoteParams | 初始化时，远程请求参数 | object |        | undefined |
 
 ## VElTable
 
