@@ -15,62 +15,7 @@ prev:
 :::demo
 form/NormalForm
 :::
-
-- form
-
-  - 类型`ElFormProps`
-
-  - 对应[ElementPlus Form参数](https://element-plus.org/zh-CN/component/form.html#form-%E5%B1%9E%E6%80%A7)
-
-- events
-
-  - 类型`EventsHandlers`
-
-  - 支持监听[ElementPlus Form事件](https://element-plus.org/zh-CN/component/form.html#form-%E4%BA%8B%E4%BB%B6)
-
-  - 支持HtmlElement事件监听
-
-  例如click事件
-
-- fields
-
-  - 类型`FormItemProps[]`
-
-  ```ts
-  type FormItemProps = {
-    itemProps?: ElFormItemProps & ElFormItemSlots
-    inputProps?: Record<string, any>
-    inputComponent: ComponentType
-    inputEvents?: EventsHandlers
-    children?: string | VNode[]
-    visible?: boolean
-    remoteHandler?: <Return = Promise<any>>(itemContext: FormItemProps) => Return
-    remoteParams?: object
-  } & Record<string, any>
-  ```
-
-  - `FormItemProps.itemProps` 
-  
-  此处特别说明，它对应 [ElFormItem 参数](https://element-plus.org/zh-CN/component/form.html#form-item-%E5%B1%9E%E6%80%A7)
-,同时合并了ElFormItem 插槽
-
-  - `FormItemProps.remoteHandler`
-
-  此参数方便异步远程数据后初始化。`FormItemProps.remoteParams` 为此函数参数，类型`object`.
-  
-  - `FormItemProps.inputComponent`
-
-  类型`ComponentType`
-
-  `type ComponentType = string | Component | DefineComponent | JSX.Element | ConcreteComponent | FunctionalComponent`
-
-  为ElFormItem下的数据输入组件，字段因此命名。
-
-    - `FormItemProps.inputProps`为组件对应参数，类型`Record<string, any>`
-    - `FormItemProps.inputEvents`为组件对应事件参数，类型`EventsHandlers`
-    - `FormItemProps.inputChildren`为组件的子节点，类型为`string | VNode[]`.
-
-### TSX
+### 使用TSX
 
 :::demo
 form/TsxForm
@@ -90,12 +35,115 @@ form/CustomComponent
 form/Login
 :::
 
+### 参数
+
+- **form**
+
+  - 类型`ElFormProps`
+
+  - 对应[ElementPlus Form参数](https://element-plus.org/zh-CN/component/form.html#form-%E5%B1%9E%E6%80%A7)
+
+- **events**
+
+  - 类型`EventsHandlers`
+
+  - 支持监听[ElementPlus Form事件](https://element-plus.org/zh-CN/component/form.html#form-%E4%BA%8B%E4%BB%B6)
+
+  - 支持HtmlElement事件监听
+
+  例如click事件
+
+- **fields**
+
+  - 类型`FormItemProps[]`
+
+  ```ts
+  type FormItemProps = {
+    itemProps?: ElFormItemProps & ElFormItemSlots
+    inputProps?: Record<string, any>
+    inputComponent: ComponentType
+    inputEvents?: EventsHandlers
+    children?: string | VNode[]
+    visible?: boolean
+    remoteHandler?: <Return = Promise<any>>(itemContext: FormItemProps) => Return
+    remoteParams?: object
+  } & Record<string, any>
+  ```
+
+  - `FormItemProps.itemProps` 
+  
+  此处特别说明，它对应 [ElFormItem 参数](https://element-plus.org/zh-CN/component/form.html#form-item-%E5%B1%9E%E6%80%A7)
+,同时合并了[ElFormItem 插槽](https://element-plus.org/zh-CN/component/form.html#form-item-%E6%8F%92%E6%A7%BD)
+
+  类型`ElFormItemProps & ElFormItemSlots`
+
+  - `FormItemProps.remoteHandler`
+  
+  类型`object`
+
+  此参数方便异步远程数据后初始化。`FormItemProps.remoteParams` 为此函数参数
+  
+  - `FormItemProps.inputComponent`
+
+  类型`ComponentType`
+
+  `type ComponentType = string | Component | DefineComponent | JSX.Element | ConcreteComponent | FunctionalComponent`
+
+  为ElFormItem下的数据输入组件，字段因此命名。
+
+  - `FormItemProps.inputProps`
+  
+  类型`Record<string, any>`
+  
+  为组件`FormItemProps.inputComponent`对应参数
+
+  - `FormItemProps.inputEvents`
+  
+  类型`EventsHandlers`
+  
+  为组件`FormItemProps.inputComponent`对应事件参数
+
+  - `FormItemProps.inputChildren`
+  
+  类型`string | VNode[]`.
+  
+  为组件`FormItemProps.inputComponent`的子节点
+
+
 ## VElTable
 
 ### 基础用法
 :::demo
 table/NormalTable
 :::
+
+### 参数
+
+- **events**
+
+  - 类型`EventsHandlers`
+
+  - 支持监听[Elment Plus ElTable 事件](https://element-plus.org/zh-CN/component/table.html#table-%E4%BA%8B%E4%BB%B6)html#form-%E4%BA%8B%E4%BB%B6)
+
+  - 支持HtmlElement事件监听
+
+  例如click事件
+
+- **columns**
+
+  - 类型`TableColumn<T>[]`
+
+  `type TableColumn<T = any> = Partial<TableColumnCtx<T>> & TableColumnSlots`
+
+  - `TableColumnCtx` 为[Element Plus ElTableColumn 参数](https://element-plus.org/zh-CN/component/table.html#table-column-%E5%B1%9E%E6%80%A7)
+
+  - `TableColumnSlots`为[Element Plus ElTableColumn 插槽](https://element-plus.org/zh-CN/component/table.html#table-column-%E6%8F%92%E6%A7%BD)
+
+- **table**
+
+  - 类型`Partial<TableProps<T>>`
+
+  - 次类型类型与[Element Plus ElTable 参数](https://element-plus.org/zh-CN/component/table.html#table-%E5%B1%9E%E6%80%A7)完全一致
 
 ## VElTablePlus
 
