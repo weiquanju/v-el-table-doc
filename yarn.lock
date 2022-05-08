@@ -1944,10 +1944,10 @@ util-deprecate@^1.0.1:
   resolved "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
 
-v-el-table@0.1.0-alpha.26:
-  version "0.1.0-alpha.26"
-  resolved "https://registry.yarnpkg.com/v-el-table/-/v-el-table-0.1.0-alpha.26.tgz#c73b1390d8c50f6265458223290e4343a99d6300"
-  integrity sha512-TFIuPA1rC201jocigMutcXfrirEgWa22ix3O3t+Hvt7EJ8poqFMnepKLLxhhecxPDoRtkE1ou0jGnDv4dWVBPQ==
+v-el-table@0.1.0-beta.28:
+  version "0.1.0-beta.28"
+  resolved "https://registry.yarnpkg.com/v-el-table/-/v-el-table-0.1.0-beta.28.tgz#dccd5db795337285ea3e24a2011a7aae03f6b60c"
+  integrity sha512-S21ecTlyFgdkSRjD1UCSrV4KnTvjRPGmwxrzzh44/QzRvuPNHB38rBas5CKZVl9KyAJTPJlUgfa8HiF+r6v+nA==
 
 vite@~2.9.6:
   version "2.9.8"
