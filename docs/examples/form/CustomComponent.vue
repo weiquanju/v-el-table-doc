@@ -35,7 +35,7 @@ const config = reactive({
                 change: (...args: any) => console.log(...args)
             },
             // select options
-            children: [{ name: '游戏APP', id: 1 }, { name: '学习APP', id: 2 },].map(({ name, id }) => {
+            inputChildren: [{ name: '游戏APP', id: 1 }, { name: '学习APP', id: 2 },].map(({ name, id }) => {
                 return <ElOption label={name} value={id} />
             })
         },

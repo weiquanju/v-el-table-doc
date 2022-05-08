@@ -50,7 +50,7 @@ const config = reactive({
                     })
                 }
             },
-            children: ['登录']
+            inputChildren: ['登录']
         }
     ]
 })

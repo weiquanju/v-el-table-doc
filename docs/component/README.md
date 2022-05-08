@@ -63,7 +63,7 @@ form/Login
     inputProps?: Record<string, any>
     inputComponent: ComponentType
     inputEvents?: EventsHandlers
-    children?: string | VNode[]
+    inputChildren?: string | VNode[]
     visible?: boolean
     remoteHandler?: <Return = Promise<any>>(itemContext: FormItemProps) => Return
     remoteParams?: object
