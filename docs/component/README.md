@@ -61,11 +61,61 @@ table/NormalTable
 ## VElTablePlus
 
 ### Query
+
+表格查询由3个参数构成，分别如下：
+
+- **queryParams**
+
+  - 类型 `any`
+  
+  - 查询方法参数
+
+- **query**
+
+  - 类型 `(formAndPage: any) => Promise<any>`
+
+  - 数据查询异步方法
+    
+  参数是form.model, pageSize, currentPage, queryParams 合并后的一个object类型值。
+
+  此参数方法是方便做接口请求，以及请求参数数据转换等情况使用。
+
+- **responsePath**
+
+  - 类型 `ResponsePathType`
+
+  ```ts
+  type ResponsePathType = {
+    data?: string
+    currentPage?: string
+    total?: string
+  }
+  ```
+
+  - 数据响应路径
+
+  此参数是确定表格组件`query`参数异步返回的表格列表数组`ResponsePathType.data`、当前页数`ResponsePathType.currentPage`、总条数`ResponsePathType.total`，3条数据的取值路径。
+
+  
+  - 示例
+  
+  `ResponsePathType.data` 表格数据取值路径: `'payload.list'`
+
+  示例展示请点击query按钮执行查询
+
+
 :::demo
 tablePlus/Query
 :::
 
+::: danger 注意
+本示例Query.vue组件分页功能，在vue3框架下正常。由于vuepress运行时报错导致分页操作失败，需上游解决即可消除。
+:::
+
 ### Filter
+
+请在`ID`输入框中输入任意参数，结果将展示对应ID
+
 :::demo
 tablePlus/TableFilter
 :::
