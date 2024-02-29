@@ -88,7 +88,7 @@ yarn add v-el-table
 ::::
 
 
-### 引入组件
+### 完整引入
 
 ```ts
 // main.ts
@@ -106,9 +106,56 @@ import 'v-el-table/style.css'
 const app = createApp(App)
 
 // 完整引入
-// app.use(ElementPlus)
-// app.use(VElTable)
+app.use(ElementPlus)
+app.use(VElTable)
 app.mount('#app')
+```
+
+### 按需引入
+
+:::: code-group
+::: code-group-item pnpm
+```shell
+
+pnpm add -D unplugin-vue-components
+
+```
+:::
+::: code-group-item npm
+```shell
+
+npm install -D unplugin-vue-components
+
+```
+:::
+::: code-group-item yarn
+```shell
+
+yarn add -D unplugin-vue-components
+
+```
+:::
+::::
+
+#### Vite
+
+```ts
+// vite.config.ts
+import Components from 'unplugin-vue-components/vite'
+import VElTableComponents from 'v-el-table/auto-import'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  //...
+  plugins: [
+    Components({
+      resolvers: [VElTableComponents, ElementPlusResolver()]
+    })
+  ]
+  //...
+})
 ```
 
 ### 开始使用

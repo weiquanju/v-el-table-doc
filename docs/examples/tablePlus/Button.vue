@@ -1,9 +1,6 @@
 <script lang="tsx" setup>
-import { FormProps } from 'v-el-table/src/components/form';
-import { TableColumn } from 'v-el-table/src/components/table';
-import { TablePlusProps } from 'v-el-table/src/components/tablePlus';
+import { type VElFormProps, type TableColumn, type VElTablePlusProps, type VElTablePlus } from 'v-el-table';
 import { reactive } from 'vue';
-import { VElTablePlus } from 'v-el-table'
 import { ElButton, ElIcon } from 'element-plus'
 import { Delete } from '@element-plus/icons-vue'
 
@@ -47,7 +44,7 @@ const tablePlusConfig = reactive<TablePlusProps<DataType>>({
         { key: 'remove', nodeParams: [ElButton, { onClick: () => console.log('remove click.') }, [(<ElIcon style="margin-right:0.3em;"><Delete /></ElIcon>), 'remove']] }
     ],
     tableProps,
-    formProps: {
+    VElFormProps: {
         form: {
             model: {
                 id: '1',
@@ -67,7 +64,7 @@ const tablePlusConfig = reactive<TablePlusProps<DataType>>({
                 inputEvents: {}
             },
         ]
-    } as FormProps
+    } as VElFormProps
 })
 </script>
 <template>

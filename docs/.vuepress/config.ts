@@ -1,4 +1,4 @@
-import { defineUserConfig, defaultTheme } from 'vuepress'
+import { defineUserConfig } from 'vuepress'
 import { viteBundler } from '@vuepress/bundler-vite'
 import path from 'path'
 import demoBlock from 'vuepress-plugin-demo-code-block'
@@ -12,7 +12,7 @@ export default defineUserConfig({
     vuePluginOptions: {},
   }),
   // 主题和它的配置
-  theme: defaultTheme({
+  theme: {
 
     logo: '/assets/images/logo.png',
     repo: 'weiquanju/v-el-table',
@@ -53,7 +53,7 @@ export default defineUserConfig({
         selectLanguageName: 'English',
       },
     },
-  }) ,
+  },
 
   locales: {
     // 键名是该语言所属的子路径
