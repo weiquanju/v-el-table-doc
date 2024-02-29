@@ -211,16 +211,6 @@ tablePlus/TableFilter
 
 #### 表格头部 button 通过两个参数控制
 
-- **includeButtons**
-  
-  - 类型 `string[]`
-
-  - 表示需要渲染显示的按钮
-
-  - 内置button有查询、重置，它们的key是 `['query','reset']`
-  
-  - 内置按钮支持国际化
-
 - **buttons**
 
   - 类型 `ButtonType[]`
@@ -234,8 +224,6 @@ tablePlus/TableFilter
     `ButtonVNode` 为Vue [h()函数](https://vuejs.org/api/render-function.html#h)的数组类型的参数
 
   - 默认内置查询、重置
-  
-    同includeButtons介绍的内置按钮
 
   - `ButtonType` 类型声明如下
 

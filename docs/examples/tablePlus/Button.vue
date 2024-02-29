@@ -36,7 +36,6 @@ const tablePlusConfig = reactive<TablePlusProps<DataType>>({
             page: data.currentPage,
         })
     },
-    includeButtons: ['query', 'reset', 'add', 'remove'],
     responsePath: 'data',
     buttons: [
         {

@@ -100,7 +100,7 @@ import App from './App.vue'
 import 'element-plus/dist/index.css'
 
 //不需要默认布局则可以无需引入style.css
-import 'v-el-table/dist/style.css'
+import 'v-el-table/style.css'
 
 
 const app = createApp(App)
