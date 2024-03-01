@@ -92,12 +92,4 @@ export default defineUserConfig({
     ['meta', { name: "apple-mobile-web-app-status-bar-style", content: "black" }],
     ['link', { rel: "apple-touch-icon", href: "/assets/images/icons/apple-app.png" }],
   ],
-  plugins: [
-    [
-      demoBlock({
-        componentsDir: path.resolve(__dirname, './../examples'),
-        githubEditLinkPath: 'https://github.com/weiquanju/v-el-table-doc/edit/main/docs/examples/',
-      })
-    ]
-  ],
 })
